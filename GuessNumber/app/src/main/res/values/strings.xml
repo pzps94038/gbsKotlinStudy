@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Guess</string>
+    <string name="ok">Ok</string>
+    <string name="please_enter_a_number">Please enter a number(1-10)</string>
+    <string name="yes_you_got_it">yes_you_got_it</string>
+    <string name="bigger">bigger</string>
+    <string name="smaller">smaller</string>
+    <string name="dialog_title">Message</string>
+    <string name="cancel">Cancel</string>
+    <string name="result">Result</string>
+    <string name="are_you_sure_you_want_to_reset">reset?</string>
+</resources>
