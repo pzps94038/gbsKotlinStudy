@@ -7,7 +7,7 @@ import java.util.*
 
 class GuessViewModel: ViewModel() {
     var secret: Int = 0;
-    var count: Int = 0;
+    private var count: Int = 0;
     val counter = MutableLiveData<Int>()
     val result = MutableLiveData<GameResult>()
     init{

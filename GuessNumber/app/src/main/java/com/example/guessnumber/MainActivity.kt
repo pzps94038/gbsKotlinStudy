@@ -1,5 +1,6 @@
 package com.example.guessnumber
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -37,7 +38,14 @@ class MainActivity : AppCompatActivity() {
             AlertDialog.Builder(this)
                 .setTitle(getString(R.string.result))
                 .setMessage(message)
-                .setPositiveButton(getString(R.string.ok), null)
+                .setPositiveButton(getString(R.string.ok), {dialog, which->
+                    if(message.equals(getString(R.string.yes_you_got_it))){
+                        val intent = Intent(this,RecordActivity::class.java)
+                        intent.putExtra("Counter",viewModel.counter.value)
+                        startActivity(intent);
+                    }
+
+                })
                 .show()
         })
         InitView();
