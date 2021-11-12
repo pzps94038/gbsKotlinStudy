@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/asus/Desktop/git/gbsKotlinStudy/GuessNumber/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/asus/Desktop/git/gbsKotlinStudy/GuessNumber/app/src/main/res/layout/activity_record.xml" value="0.264" />
+        <entry key="..\:/Users/asus/Desktop/git/gbsKotlinStudy/GuessNumber/app/src/main/res/layout/activity_recycler_view.xml" value="0.34986945169712796" />
         <entry key="..\:/Users/pzps9/Desktop/git/gbsKotlinStudy/GuessNumber/app/src/main/res/layout/activity_main.xml" value="0.28804347826086957" />
         <entry key="..\:/Users/pzps9/Desktop/git/gbsKotlinStudy/GuessNumber/app/src/main/res/layout/activity_record.xml" value="0.25" />
       </map>
