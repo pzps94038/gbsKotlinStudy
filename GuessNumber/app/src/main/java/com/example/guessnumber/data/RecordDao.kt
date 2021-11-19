@@ -10,7 +10,7 @@ interface RecordDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun inSert(record: Record)
 
-//    @Query("select nick from record")
-//    fun getAll():List<Record>
+    @Query("select * from record")
+    fun getAll():List<Record>
 
 }

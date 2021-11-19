@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GuessNumber">
         <activity
+            android:name=".RecyclerListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecordListActivity"
+            android:exported="false" />
+        <activity
             android:name=".RecyclerViewActivity"
             android:exported="true">
             <intent-filter>
@@ -23,8 +29,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
