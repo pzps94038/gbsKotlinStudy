@@ -13,9 +13,17 @@ import androidx.room.Room
 import com.example.guessnumber.data.GameDataBase
 import com.example.guessnumber.data.Record
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , CoroutineScope{
+    private lateinit var job: Job
+    override val coroutineContext: CoroutineContext
+        get() = job + Dispatchers.Main
     // 先宣告等等會有一個 viewModel的物件
     // 在onCreate實體化,因為實體化只能在onCreate之後
     private lateinit var viewModel: GuessViewModel;
@@ -23,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        job = Job()
         // 設定viewModel提供者
         viewModel = ViewModelProvider(this).get(GuessViewModel::class.java)
         // 監聽counter如果有變動會重新調整文字
@@ -60,13 +68,10 @@ class MainActivity : AppCompatActivity() {
         // endregion
         //使用Room
         // val database = Room.databaseBuilder(this,GameDataBase::class.java,"game.db").build()
-        var database = GameDataBase.getGameDataBase(this);
-        val record = Record("Jack",3)
-
-        Thread {
-            database?.recordDao()?.inSert(record)
-        }.start()
-
+//        var database = GameDataBase.getGameDataBase(this);
+//        Thread {
+//            database?.recordDao()?.inSert(record)
+//        }.start()
         initView();
     }
 
@@ -115,5 +120,4 @@ class MainActivity : AppCompatActivity() {
             .show()
         ed_number.setText("")
     }
-
 }

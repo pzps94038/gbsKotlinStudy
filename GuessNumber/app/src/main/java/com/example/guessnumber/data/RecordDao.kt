@@ -8,9 +8,9 @@ import androidx.room.Query
 @Dao
 interface RecordDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun inSert(record: Record)
+    suspend fun inSert(record: Record)
 
     @Query("select * from record")
-    fun getAll():List<Record>
+    suspend fun getAll():List<Record>
 
 }
